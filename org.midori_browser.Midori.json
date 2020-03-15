@@ -44,6 +44,10 @@
           "type": "git",
           "url": "https://github.com/midori-browser/core.git",
           "tag": "v9.0"
+        },
+        {
+          "type": "patch",
+          "path": "appdata_file.patch"
         }
       ]
     }
