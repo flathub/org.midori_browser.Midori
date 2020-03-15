@@ -20,9 +20,11 @@
   "modules": [
     {
       "name": "libpeas",
+      "buildsystem": "meson",
       "cleanup": [
         "/bin/",
-        "/lib/peas-demo"
+        "/lib/peas-demo",
+        "/lib/pkgconfig"
       ],
       "sources": [
         {
