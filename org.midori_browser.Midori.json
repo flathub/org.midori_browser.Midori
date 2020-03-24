@@ -2,7 +2,7 @@
   "app-id": "org.midori_browser.Midori",
   "branch": "stable",
   "runtime": "org.gnome.Platform",
-  "runtime-version" : "3.32",
+  "runtime-version" : "3.36",
   "sdk": "org.gnome.Sdk",
   "command": "midori",
   "finish-args" : [
@@ -18,17 +18,20 @@
     "--talk-name=org.freedesktop.secrets"
   ],
   "modules": [
+    "shared-modules/intltool/intltool-0.51.json",
     {
       "name": "libpeas",
+      "buildsystem": "meson",
       "cleanup": [
         "/bin/",
-        "/lib/peas-demo"
+        "/lib/peas-demo",
+        "/lib/pkgconfig"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
-          "tag": "libpeas-1.22.0"
+          "tag": "libpeas-1.26.0"
         }
       ]
     },
@@ -41,6 +44,10 @@
           "type": "git",
           "url": "https://github.com/midori-browser/core.git",
           "tag": "v9.0"
+        },
+        {
+          "type": "patch",
+          "path": "appdata_file.patch"
         }
       ]
     }
