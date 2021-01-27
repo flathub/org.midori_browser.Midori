@@ -2,7 +2,7 @@
   "app-id": "org.midori_browser.Midori",
   "branch": "stable",
   "runtime": "org.gnome.Platform",
-  "runtime-version" : "3.36",
+  "runtime-version" : "3.38",
   "sdk": "org.gnome.Sdk",
   "command": "midori",
   "finish-args" : [
@@ -31,7 +31,7 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
-          "tag": "libpeas-1.26.0"
+          "tag": "libpeas-1.28.0"
         }
       ]
     },
