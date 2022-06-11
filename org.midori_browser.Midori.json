@@ -2,17 +2,17 @@
   "app-id": "org.midori_browser.Midori",
   "branch": "stable",
   "runtime": "org.gnome.Platform",
-  "runtime-version" : "3.36",
+  "runtime-version": "42",
   "sdk": "org.gnome.Sdk",
   "command": "midori",
   "finish-args" : [
     "--device=dri",
     "--share=network",
     "--share=ipc",
-    "--socket=x11",
+    "--socket=fallback-x11",
     "--socket=wayland",
     "--socket=pulseaudio",
-    "--filesystem=xdg-download:rw",
+    "--filesystem=xdg-download",
     "--talk-name=org.freedesktop.Notifications",
     "--system-talk-name=org.freedesktop.GeoClue2",
     "--talk-name=org.freedesktop.secrets"
@@ -31,7 +31,7 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
-          "tag": "libpeas-1.26.0"
+          "tag": "libpeas-1.32.0"
         }
       ]
     },
@@ -41,13 +41,13 @@
       "builddir": true,
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/midori-browser/core.git",
-          "tag": "v9.0"
+          "type": "archive",
+          "url": "https://github.com/midori-browser/core/releases/download/v9.0/midori-v9.0.tar.gz",
+          "sha256": "5e0a531455c47b0ff7589940aa2b0d9c16f59c99ba933e5fcdcab68114262016"
         },
         {
           "type": "patch",
-          "path": "appdata_file.patch"
+          "path": "0001-appdata-patch.patch"
         }
       ]
     }
