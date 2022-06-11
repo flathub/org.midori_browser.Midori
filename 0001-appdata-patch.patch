@@ -1,0 +1,40 @@
+From 15adaf91b1dc2574eee6d8a33c92cb0be196c7bb Mon Sep 17 00:00:00 2001
+From: bbhtt <62639087+bbhtt@users.noreply.github.com>
+Date: Sat, 11 Jun 2022 08:36:08 +0530
+Subject: [PATCH] Appdata patch
+
+- New screenshots
+- Remove ul tag
+---
+ data/org.midori_browser.Midori.appdata.xml.in | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/data/org.midori_browser.Midori.appdata.xml.in b/data/org.midori_browser.Midori.appdata.xml.in
+index d318894d..84d8aebc 100644
+--- a/data/org.midori_browser.Midori.appdata.xml.in
++++ b/data/org.midori_browser.Midori.appdata.xml.in
+@@ -27,9 +27,6 @@
+       <li>Adblock filter list support.</li>
+       <li>Private browsing.</li>
+       <li>Manage cookies and scripts.</li>
+-    </ul>
+-    <p><b></b></p>
+-    <ul>
+       <li>Open a 1000 tabs instantly.</li>
+       <li>Easy web apps creation.</li>
+       <li>Customizable side panels.</li>
+@@ -40,7 +37,10 @@
+   <url type="homepage">https://www.midori-browser.org/</url>
+   <screenshots>
+     <screenshot type="default">
+-      <image>https://www.midori-browser.org/images/screenshots/rdio.png</image>
++      <image>https://raw.githubusercontent.com/bbhtt/org.midori_browser.Midori/update/screenshots/screenshot1.png</image>
++    </screenshot>
++    <screenshot>
++      <image>https://raw.githubusercontent.com/bbhtt/org.midori_browser.Midori/update/screenshots/screenshot2.png</image>
+     </screenshot>
+   </screenshots>
+   <update_contact>christian@twotoasts.de</update_contact>
+-- 
+2.36.1
+
