@@ -47,7 +47,7 @@
         },
         {
           "type": "patch",
-          "path": "0001-appdata-patch.patch"
+          "path": "0001-Appdata-patch.patch"
         }
       ]
     }
