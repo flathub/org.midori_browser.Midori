@@ -1,16 +1,14 @@
-From 15adaf91b1dc2574eee6d8a33c92cb0be196c7bb Mon Sep 17 00:00:00 2001
+From ec146f13bde8ac56f53477370255d0c15590e149 Mon Sep 17 00:00:00 2001
 From: bbhtt <62639087+bbhtt@users.noreply.github.com>
-Date: Sat, 11 Jun 2022 08:36:08 +0530
+Date: Fri, 1 Jul 2022 20:26:36 +0530
 Subject: [PATCH] Appdata patch
 
-- New screenshots
-- Remove ul tag
 ---
- data/org.midori_browser.Midori.appdata.xml.in | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ data/org.midori_browser.Midori.appdata.xml.in | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/data/org.midori_browser.Midori.appdata.xml.in b/data/org.midori_browser.Midori.appdata.xml.in
-index d318894d..84d8aebc 100644
+index d318894d..863003a2 100644
 --- a/data/org.midori_browser.Midori.appdata.xml.in
 +++ b/data/org.midori_browser.Midori.appdata.xml.in
 @@ -27,9 +27,6 @@
@@ -35,6 +33,14 @@ index d318894d..84d8aebc 100644
      </screenshot>
    </screenshots>
    <update_contact>christian@twotoasts.de</update_contact>
+@@ -51,6 +51,7 @@
+   <translation type="gettext">midori</translation>
+   <content_rating type="oars-1.1" />
+   <releases>
++    <release version="9.0" date="2019-07-30"/>
+     <release version="0.5.11" date="2015-08-30"/>
+   </releases>
+ </component>
 --
-2.36.1
+2.37.0
 
