@@ -1,98 +1,100 @@
 {
-  "app-id": "org.midori_browser.Midori",
-  "branch": "stable",
-  "runtime": "org.gnome.Platform",
-  "runtime-version": "44",
-  "sdk": "org.gnome.Sdk",
-  "command": "midori",
-  "finish-args" : [
-    "--device=dri",
-    "--share=network",
-    "--share=ipc",
-    "--socket=fallback-x11",
-    "--socket=wayland",
-    "--socket=pulseaudio",
-    "--filesystem=xdg-download",
-    "--talk-name=org.freedesktop.Notifications",
-    "--system-talk-name=org.freedesktop.GeoClue2",
-    "--talk-name=org.freedesktop.secrets"
-  ],
-  "modules": [
-    "shared-modules/intltool/intltool-0.51.json",
-    "shared-modules/libsoup/libsoup-2.4.json",
-    {
-      "name": "libpeas",
-      "buildsystem": "meson",
-      "cleanup": [
-        "/bin/",
-        "/lib/peas-demo",
-        "/lib/pkgconfig"
-      ],
-      "sources": [
+    "app-id": "org.midori_browser.Midori",
+    "branch": "stable",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "44",
+    "sdk": "org.gnome.Sdk",
+    "command": "midori",
+    "finish-args": [
+        "--device=dri",
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--socket=pulseaudio",
+        "--filesystem=xdg-download",
+        "--talk-name=org.freedesktop.Notifications",
+        "--system-talk-name=org.freedesktop.GeoClue2",
+        "--talk-name=org.freedesktop.secrets"
+    ],
+    "modules": [
+        "shared-modules/intltool/intltool-0.51.json",
+        "shared-modules/libsoup/libsoup-2.4.json",
         {
-          "type": "archive",
-          "url": "https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
-          "sha256": "297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
-          "x-checker-data": {
-            "type": "gnome",
-            "name": "libpeas"
-          }
-        }
-      ]
-    },
-    {
-      "name": "unifdef",
-      "no-autogen": true,
-      "make-install-args": [
-          "prefix=${FLATPAK_DEST}"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
-          "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
-        }
-      ],
-      "cleanup": [ "*" ]
-    },
-    {
-      "name": "webkit2gtk-4.0",
-      "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DPORT=GTK",
-        "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
-        "-DENABLE_DOCUMENTATION=OFF",
-        "-DUSE_SOUP2=ON"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://webkitgtk.org/releases/webkitgtk-2.40.5.tar.xz",
-          "sha256": "7de051a263668621d91a61a5eb1c3771d1a7cec900043d4afef06c326c16037f",
-          "x-checker-data": {
-            "type": "html",
-            "url": "https://webkitgtk.org/releases/",
-            "version-pattern": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
-            "url-template": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz"
-          }
-        }
-      ]
-    },
-    {
-      "name": "midori",
-      "buildsystem": "cmake-ninja",
-      "builddir": true,
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/midori-browser/core/releases/download/v9.0/midori-v9.0.tar.gz",
-          "sha256": "5e0a531455c47b0ff7589940aa2b0d9c16f59c99ba933e5fcdcab68114262016"
+            "name": "libpeas",
+            "buildsystem": "meson",
+            "cleanup": [
+                "/bin/",
+                "/lib/peas-demo",
+                "/lib/pkgconfig"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz",
+                    "sha256": "297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libpeas"
+                    }
+                }
+            ]
         },
         {
-          "type": "patch",
-          "path": "0001-Appdata-patch.patch"
+            "name": "unifdef",
+            "no-autogen": true,
+            "make-install-args": [
+                "prefix=${FLATPAK_DEST}"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz",
+                    "sha256": "43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400"
+                }
+            ],
+            "cleanup": [
+                "*"
+            ]
+        },
+        {
+            "name": "webkit2gtk-4.0",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DPORT=GTK",
+                "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
+                "-DENABLE_DOCUMENTATION=OFF",
+                "-DUSE_SOUP2=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://webkitgtk.org/releases/webkitgtk-2.42.0.tar.xz",
+                    "sha256": "828f95935861fae583fb8f2ae58cf64c63c178ae2b7c2d6f73070813ad64ed1b",
+                    "x-checker-data": {
+                        "type": "html",
+                        "url": "https://webkitgtk.org/releases/",
+                        "version-pattern": "LATEST-STABLE-(\\d[\\.\\d]+\\d)",
+                        "url-template": "https://webkitgtk.org/releases/webkitgtk-$version.tar.xz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "midori",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/midori-browser/core/releases/download/v9.0/midori-v9.0.tar.gz",
+                    "sha256": "5e0a531455c47b0ff7589940aa2b0d9c16f59c99ba933e5fcdcab68114262016"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-Appdata-patch.patch"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
