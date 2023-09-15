@@ -82,10 +82,12 @@
             "name": "webkit2gtk-4.0",
             "buildsystem": "cmake-ninja",
             "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DPORT=GTK",
                 "-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
                 "-DENABLE_DOCUMENTATION=OFF",
-                "-DUSE_SOUP2=ON"
+                "-DUSE_SOUP2=ON",
+                "-DENABLE_MINIBROWSER=OFF"
             ],
             "sources": [
                 {
