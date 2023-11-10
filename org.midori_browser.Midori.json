@@ -1,6 +1,5 @@
 {
     "app-id": "org.midori_browser.Midori",
-    "branch": "stable",
     "runtime": "org.gnome.Platform",
     "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
