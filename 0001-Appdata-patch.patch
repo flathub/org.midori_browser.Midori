@@ -1,17 +1,42 @@
-From ec146f13bde8ac56f53477370255d0c15590e149 Mon Sep 17 00:00:00 2001
+From b84eb1cd789760b6535a433752ca2f42959ed08b Mon Sep 17 00:00:00 2001
 From: bbhtt <62639087+bbhtt@users.noreply.github.com>
 Date: Fri, 1 Jul 2022 20:26:36 +0530
 Subject: [PATCH] Appdata patch
 
 ---
- data/org.midori_browser.Midori.appdata.xml.in | 9 +++++----
- 1 file changed, 5 insertions(+), 4 deletions(-)
+ data/org.midori_browser.Midori.appdata.xml.in | 58 ++++++++++++++-----
+ 1 file changed, 43 insertions(+), 15 deletions(-)
 
 diff --git a/data/org.midori_browser.Midori.appdata.xml.in b/data/org.midori_browser.Midori.appdata.xml.in
-index d318894d..863003a2 100644
+index d318894..dae3386 100644
 --- a/data/org.midori_browser.Midori.appdata.xml.in
 +++ b/data/org.midori_browser.Midori.appdata.xml.in
-@@ -27,9 +27,6 @@
+@@ -5,31 +5,21 @@
+   <launchable type="desktop-id">org.midori_browser.Midori.desktop</launchable>
+   <metadata_license>CC0-1.0</metadata_license>
+   <project_license>LGPL-2.1-or-later</project_license>
+-  <_name>Midori Web Browser</_name>
++  <name>Midori Web Browser</name>
+   <categories>
+     <category>Network</category>
+     <category>WebBrowser</category>
+   </categories>
+-  <kudos>
+-    <kudo>AppMenu</kudo>
+-    <kudo>HiDpiIcon</kudo>
+-    <kudo>ModernToolkit</kudo>
+-    <kudo>Notifications</kudo>
+-    <kudo>UserDocs</kudo>
+-  </kudos>
+-  <summary>A fast and lightweight web browser</summary>
++  <summary>Browse the web faster</summary>
+   <description>
+     <p>
+     Midori is a lightweight yet powerful web browser which runs just as well on little embedded computers named for delicious pastries as it does on beefy machines with a core temperature exceeding that of planet earth. And it looks good doing that, too. Oh, and of course it's free software.
+     </p>
+-    <p><b>Privacy out of the box</b></p>
++    <p>Privacy out of the box</p>
+     <ul>
        <li>Adblock filter list support.</li>
        <li>Private browsing.</li>
        <li>Manage cookies and scripts.</li>
@@ -21,26 +46,64 @@ index d318894d..863003a2 100644
        <li>Open a 1000 tabs instantly.</li>
        <li>Easy web apps creation.</li>
        <li>Customizable side panels.</li>
-@@ -40,7 +37,10 @@
+@@ -40,17 +30,55 @@
    <url type="homepage">https://www.midori-browser.org/</url>
    <screenshots>
      <screenshot type="default">
 -      <image>https://www.midori-browser.org/images/screenshots/rdio.png</image>
 +      <image>https://raw.githubusercontent.com/flathub/org.midori_browser.Midori/master/screenshots/screenshot1.png</image>
++      <caption>Start page with DuckDuckGo search engine</caption>
 +    </screenshot>
 +    <screenshot>
 +      <image>https://raw.githubusercontent.com/flathub/org.midori_browser.Midori/master/screenshots/screenshot2.png</image>
++      <caption>Browsing preferences window</caption>
++    </screenshot>
++    <screenshot>
++      <image>https://raw.githubusercontent.com/flathub/org.midori_browser.Midori/master/screenshots/screenshot3.png</image>
++      <caption>Privacy preferences window</caption>
++    </screenshot>
++    <screenshot>
++      <image>https://raw.githubusercontent.com/flathub/org.midori_browser.Midori/master/screenshots/screenshot4.png</image>
++      <caption>Start page with DuckDuckGo search engine in dark mode</caption>
++    </screenshot>
++    <screenshot>
++      <image>https://raw.githubusercontent.com/flathub/org.midori_browser.Midori/master/screenshots/screenshot5.png</image>
++      <caption>Extensions preferences window</caption>
      </screenshot>
    </screenshots>
    <update_contact>christian@twotoasts.de</update_contact>
-@@ -51,6 +51,7 @@
+-  <developer_name>Christian Dywan</developer_name>
++  <developer id="org.midori_browser">
++    <name>Christian Dywan</name>
++  </developer>
+   <url type="bugtracker">https://github.com/midori-browser/core/issues</url>
+   <url type="faq">https://www.midori-browser.org/faq</url>
+   <url type="donation">https://www.midori-browser.org/donate</url>
    <translation type="gettext">midori</translation>
    <content_rating type="oars-1.1" />
++  <branding>
++    <color type="primary" scheme_preference="light">#D4DDCC</color>
++    <color type="primary" scheme_preference="dark">#818C77</color>
++  </branding>
    <releases>
-+    <release version="9.0" date="2019-07-30"/>
++    <release version="9.0" date="2019-07-30">
++      <url type="details">https://github.com/midori-browser/core/releases/tag/v9.0</url>
++      <description>
++        <p>Sync me baby one more time</p>
++        <ul>
++          <li>Use OpenGraph images for Speed Dial shortcuts</li>
++          <li>Better support for Javascript popups</li>
++          <li>(Re)store pinned tabs in the session</li>
++          <li>Re-introduce the Trust (certificate) button</li>
++          <li>Avoid key input recursion causing high CPU</li>
++          <li>Close Tab/ Other context menu items</li>
++          <li>Paste and Proceed option in the urlbar</li>
++        </ul>
++      </description>
++    </release>
      <release version="0.5.11" date="2015-08-30"/>
    </releases>
  </component>
---
-2.37.0
+-- 
+2.44.0
 
